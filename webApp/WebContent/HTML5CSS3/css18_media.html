@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반응형</title>
+<!-- 장치에 맞게 픽셀정보 조정 																				1~10배				-->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+	ul,li{margin:0px; padding:0px; list-style-type:none; overflow: hidden;}
+	li{width:47%; border: 1px solid #ccc; margin:3px; padding:3px;float: left;}
+
+	/* 반응형 스타일 지정 */
+	/* 320px ~ 600px */
+	/* all, screen, print, tv, projection.... */
+	@media all and (min-width:320px) and (max-width:600px){
+		li{
+			background: black;
+			color: white;
+		}
+	}
+	
+	@media all and (min-width:601px) and (max-width:800px){
+		li{
+			background: green;
+			color: white;
+		}
+	}
+	
+	@media all and (min-width:801px){
+		li{
+			background: blue;
+			color: white;
+		}
+	}
+</style>
+</head>
+<body>
+<ul>
+		<li>INFO: 서버 엔진을 시작합니다: [Apache Tomcat/10.0.2] 2월 24, 2021
+			9:52:58 오전 org.apache.coyote.AbstractProtocol start INFO: 프로토콜 핸들러
+			["http-nio-9090"]을(를) 시작합니다. 2월 24, 2021 9:52:58 오전
+			org.apache.catalina.startup.Catalina start INFO: 서버가 [332] 밀리초 내에
+			시작되었습니다.
+		</li>
+		<li>INFO: 서버 엔진을 시작합니다: [Apache Tomcat/10.0.2] 2월 24, 2021
+			9:52:58 오전 org.apache.coyote.AbstractProtocol start INFO: 프로토콜 핸들러
+			["http-nio-9090"]을(를) 시작합니다. 2월 24, 2021 9:52:58 오전
+			org.apache.catalina.startup.Catalina start INFO: 서버가 [332] 밀리초 내에
+			시작되었습니다.
+		</li>
+		<li>INFO: 서버 엔진을 시작합니다: [Apache Tomcat/10.0.2] 2월 24, 2021
+			9:52:58 오전 org.apache.coyote.AbstractProtocol start INFO: 프로토콜 핸들러
+			["http-nio-9090"]을(를) 시작합니다. 2월 24, 2021 9:52:58 오전
+			org.apache.catalina.startup.Catalina start INFO: 서버가 [332] 밀리초 내에
+			시작되었습니다.
+		</li>
+		<li>INFO: 서버 엔진을 시작합니다: [Apache Tomcat/10.0.2] 2월 24, 2021
+			9:52:58 오전 org.apache.coyote.AbstractProtocol start INFO: 프로토콜 핸들러
+			["http-nio-9090"]을(를) 시작합니다. 2월 24, 2021 9:52:58 오전
+			org.apache.catalina.startup.Catalina start INFO: 서버가 [332] 밀리초 내에
+			시작되었습니다.
+		</li>
+		<li>INFO: 서버 엔진을 시작합니다: [Apache Tomcat/10.0.2] 2월 24, 2021
+			9:52:58 오전 org.apache.coyote.AbstractProtocol start INFO: 프로토콜 핸들러
+			["http-nio-9090"]을(를) 시작합니다. 2월 24, 2021 9:52:58 오전
+			org.apache.catalina.startup.Catalina start INFO: 서버가 [332] 밀리초 내에
+			시작되었습니다.
+		</li>
+		<li>INFO: 서버 엔진을 시작합니다: [Apache Tomcat/10.0.2] 2월 24, 2021
+			9:52:58 오전 org.apache.coyote.AbstractProtocol start INFO: 프로토콜 핸들러
+			["http-nio-9090"]을(를) 시작합니다. 2월 24, 2021 9:52:58 오전
+			org.apache.catalina.startup.Catalina start INFO: 서버가 [332] 밀리초 내에
+			시작되었습니다.
+		</li>
+	</ul>
+</body>
+</html>

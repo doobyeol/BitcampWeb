@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background 속성</title>
+
+<style type="text/css">
+	body{
+/* 		background-color: #eee;
+		background-image: url(../img/test.png);
+		background-repeat:no-repeat;
+		background-position: right top;
+		background-attachment: fixed;
+		background-size: cover; */
+		
+		/* 스타일 시트의 그룹화 */
+		background: #eee url(../img/test.png) no-repeat fixed right top;
+	}
+	
+	div{
+		background-color: white;
+		width: 50%;
+		/* 투명도 설정 */
+		opacity: 0.9;
+	}
+</style>
+
+</head>
+<body>
+	<div>
+		 <h1>background 속성</h1>
+		 <ul>
+		 	<li>
+		 		background-color : 배경색 단색설정 : red, blue, rgb코드
+		 	</li>
+		 	<li>
+		 		background-image : 배경을 이미지로 설정 : url(이미지, 파일명);
+		 	</li>
+		 	<li>
+		 		background-repeat : 배경이미지 반복여부 설정 : no-repeat, repeat-x, repeat-y
+		 	</li>
+		 	<li>
+		 		background-position : 배경이미지의 위치 설정 : left, center, right, top, bottom, middle, %
+		 	</li>
+		 	<li>
+		 		background-attachment : 배경이미지 고정 설정 : fixed, scroll
+		 	</li>
+		 	
+		 </ul>
+		 
+		 <img alt="" src="../img/test.png"><br>
+		 <img alt="" src="../img/test.png"><br>
+		 <img alt="" src="../img/test.png"><br>
+		 <img alt="" src="../img/test.png"><br>
+		 <img alt="" src="../img/test.png"><br>
+		 <img alt="" src="../img/test.png"><br>
+		 <img alt="" src="../img/test.png"><br>
+	</div>
+</body>
+</html>

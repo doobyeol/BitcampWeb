@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동위선택자</title>
+<style type="text/css">
+
+	/* 
+		선택자A+선택자B -> 선택자A의 바로 다음에 있는 선택자B에 적용
+		선택자A~선택자B -> 선택자A의 다음에 있는 모든 선택자B에 적용
+	*/
+	h1+h2{
+		color: red;
+	}
+	
+	h1~h2{
+		background-color: #eee;
+	}
+</style>
+</head>
+<body>
+	<h1>동위 선택자 A</h1>
+	<h2>동위 선택자 B</h2>
+	<h2>동위 선택자 C</h2>
+	<h2>동위 선택자 D</h2>
+	<h2>동위 선택자 E</h2>
+	<h3>~~~~~~~~~~</h3>
+	
+	<h1>동위 선택자 A</h1>
+	<h2>동위 선택자 B</h2>
+	<h2>동위 선택자 C</h2>
+	<h2>동위 선택자 D</h2>
+	<h2>동위 선택자 E</h2>
+	<h3>~~~~~~~~~~</h3>	
+</body>
+</html>

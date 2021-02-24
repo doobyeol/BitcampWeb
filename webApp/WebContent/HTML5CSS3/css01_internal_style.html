@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* internal 방식 */
+/* 
+		선택자 : 태그 선택자, 아이디 선택자, 클래스 선택자
+	 */
+
+/* 선택자{속성:속성값, 속성:속성값} */
+div {
+	color: blue;
+	background-color: #eee;
+}
+
+#txt{
+	color: pink;
+}
+
+.c1{
+	font-size: 20pt;
+}
+
+#d1{
+	/* text-decoration : 밑줄 underline, 윗줄 overline, 취소선 line-through, none */
+	text-decoration: underline;
+}
+</style>
+
+</head>
+<body>
+	<!-- 
+		스타일 표시 방법
+		inline 방식 : html 태그에 style 속성으로 표기
+		internal 방식 : head 태그에 style태그를 이용하여 표기
+	 	external 방식 : 스타일시트를 별도의 외부파일로 생성하여 사용한다.
+	 -->
+	<h1 style="color: red">스타일 시트</h1>
+
+	<div>[Log] Scanner.scan has not advanced at offset 2747, state
+		before: 10 after: 4 [Log] Scanner.scan has not advanced at offset
+		2757, state before: 10 after: 4 [Log] Scanner.scan has not advanced at
+		offset 2823, state before: 10 after: 4 [Log] Scanner.scan has not
+		advanced at offset 2831, state before: 10 after: 4</div>
+
+	<ul>
+		<li>inline 방식 : html 태그에 style 속성으로 표기</li>
+		<li id="txt">internal 방식 : head 태그에 style태그를 이용하여 표기</li>
+		<li class="c1">external 방식 : 스타일시트를 별도의 외부파일로 생성하여 사용한다.</li>
+	</ul>
+
+	<div class="c1">
+		[Log] Scanner.scan has not advanced at offset 2747, state
+		<span id="d1">
+			before: 10 after: 4 [Log] Scanner.scan has not advanced at offset 2757, 
+		</span>
+		state before: 10 after: 4 [Log] Scanner.scan has not advanced at
+		offset 2823, state before: 10 after: 4 [Log] Scanner.scan has not
+		advanced at offset 2831, state before: 10 after: 4</div>
+
+</body>
+</html>

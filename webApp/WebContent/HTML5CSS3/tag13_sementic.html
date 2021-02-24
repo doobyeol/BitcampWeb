@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body, ul, li{margin:0; padding:0; list-style: none;}
+	header{
+		height: 150px;
+	}
+	
+	#logo, header>nav, section{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	
+	#logo{
+		height: 100px;
+		font-size: 40px;
+		line-height: 100px;
+		text-align: center;
+		background: gray;
+	}
+	
+	header nav{
+		height: 50px;
+	}
+	
+	header li{
+		float: left;
+		text-align: center;
+		width: 20%;
+		line-height: 50px;
+	}
+</style>
+</head>
+<body>
+<header>
+	<h1 id="logo"><a>Bitcamp</a></h1>
+	<nav>
+		<ul>
+			<li><a>Menu1</a></li>
+			<li><a>Menu2</a></li>
+			<li><a>Menu3</a></li>
+			<li><a>Menu4</a></li>
+			<li><a>Menu5</a></li>
+		</ul>
+	</nav>
+</header>
+
+<style>
+	section {
+		overflow: hidden;
+	}
+	
+	section nav{
+		width: 150px; 
+		float:left;
+	}
+	
+	section article{
+		width: 850px;
+		float: right;
+		margin-bottom: 40px;
+	}
+	
+	section nav li {
+		height: 50px;
+		line-height: 50px;
+		padding-left:30px;
+		background-color: #eee;
+	}
+	
+	/* 게시판 */
+	section article h1{
+		text-align: center;
+	}
+	
+	section article ul{
+		margin:30px;
+	}
+	
+	section article li{
+		float: left;
+		width: 10%;
+		line-height: 40px;
+		border-bottom: 1px solid #ddd;
+	}
+	
+	/* 제목 */
+	section article li:nth-child(5n+2){
+		width: 60%;
+		white-space:nowrap;
+		overflow: hidden;
+		text-overflow:ellipsis;
+	}
+	
+	section article li:nth-child(5n+1){
+		width: 7%;
+	}
+	
+	section article li:nth-child(5n+4){
+		width: 13%;
+	}
+	
+	footer{
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		background-color: black;
+		color: white;
+	}
+</style>
+<section>
+	<nav>
+		<ul>
+			<li>SubMenu1</li>
+			<li>SubMenu2</li>
+			<li>SubMenu3</li>
+			<li>SubMenu4</li>
+		</ul>
+	</nav>
+	
+	<article>
+		<h1>게시판</h1>
+		<ul>
+			<li>번호</li>
+			<li>제목</li>
+			<li>작성자</li>
+			<li>등록일</li>
+			<li>조회수</li>
+			
+			<li>100</li>
+			<li>[553] 밀리초 내에 서버가 초기화되었습니다. 밀리초 내에 서버가 초기화되었습니다</li>
+			<li>콘솔</li>
+			<li>2021-02-24</li>
+			<li>0</li>
+			
+			<li>100</li>
+			<li>[553] 밀리초 내에 서버가 초기화되었습니다.</li>
+			<li>콘솔</li>
+			<li>2021-02-24</li>
+			<li>0</li>
+			
+			<li>100</li>
+			<li>[553] 밀리초 내에 서버가 초기화되었습니다.</li>
+			<li>콘솔</li>
+			<li>2021-02-24</li>
+			<li>0</li>
+			
+			<li>100</li>
+			<li>[553] 밀리초 내에 서버가 초기화되었습니다.</li>
+			<li>콘솔</li>
+			<li>2021-02-24</li>
+			<li>0</li>
+			
+		</ul>
+	</article>
+</section>
+
+<footer>
+	@copylight.doobyeol
+</footer>
+
+</body>
+</html>

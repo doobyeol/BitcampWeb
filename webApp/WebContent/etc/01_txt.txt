@@ -1,0 +1,66 @@
+Replace(char1
+  (현재있는데이터, 변경할 데이터, 이걸로 변경)
+select *from tab; ->테이블명이 전부 나온다.
+
+
+--reaplace : 특정문자 치환
+
+--사원명에 'A'를 '에이'로 변경하겠다.
+select ename, replase(ename, 'A', '에이') rep from emp;
+
+--INSTR :특정 문자열이 포함되어있는지 조사하여 문자열의 위치를 반환한다. 
+--indexOf와 유사하다 
+--문자열이 발견되지 않으면 0이 반환
+select job, instr(job,'NA') from emp;
+--  3번째 문자부터 찾기
+select job, instr(job,'A', 3) from emp;
+--                         2번째 위치에서 2번째 A를 구하라
+select job, instr(job,'A', 2, 2) from emp;
+
+
+
+--이메일 입력시 아이디와 도메인 분리하기 
+
+select lssgt07@naver.com, substr(lssgt07@naver.com, 1,replase(lssgt07@naver.com,'@')) id, substr(lssgt07@naver.com, replase(lssgt07@naver.com,'@'),length(lssgt07@naver.com)) domain from dual;
+replase(email,'@') => @의 위치 인덱스
+--lssgt07@naver.com
+--문자 일부 : substr
+--@위치 : instr
+--
+select substr('lssgt07@naver.com',1,instr('lssgt07@naver.com','@')-1)       아이디,
+        substr('lssgt07@naver.com', instr('lssgt07@naver.com','@')+1, length('lssgt07@naver.com'))   도메인 from dual;
+
+select substr('이메일',1,instr('이메일','@')-1)       아이디,
+         substr('이메일', instr('이메일','@')+1, length('이메일'))               도메인 from dual;
+
+--trim : 양쪽의 문자 또는 숫자를 제거
+select sal, trim( 0 from sal) 급여 from emp;
+
+--ltrim : 왼쪽에 있는 문자가 지정한 문자가 나오지 않을때까지 지우는것 
+
+select  ltrim('xyxxyTTxyxy','xy'), rtrim('xyxxyTTxyxy','xy')  from dual;
+ 
+--decode
+-- 10:총무부, 20: 인사부, 30:기획부 
+select ename, deptno, decode(deptno, 10,'총무부', 20,'인사부', 30,'기획부') as부서명 from emp;
+
+--문제 1: 사원 번호 사원명 담당업무 입사일 급여 보너스 지급액을 출력하라 
+지급액은 급여+보너스
+select empno, empname, deptno, hiredate, sal, comm, sal+nvl(comm,0) 지급액 from emp;
+
+--문제2 사원명 담당업무 급여 보너스를 선택하되 급여가 2500에서 4000불 사이이거나 
+담당업무가 salesman인 사원을 급여의 내림차순으로 정렬하여 레코드를 출력하라
+
+select ename, job, sal, nvl(comm,0) from emp
+where sal between 2500 and 4000 or job ='SALESMAN'
+order by sal desc;
+
+--to_char : 날짜를 문자로 변환
+select ename, hiredate, to_char(hiredate,'YYYY-MM-DD') from emp;
+
+--to_date : 문자를 날짜로 변환 
+select to_date('2020-12-05 10:12','YYY-MM-DD HH24:MI') from dual;
+
+
+
+

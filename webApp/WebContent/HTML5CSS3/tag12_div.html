@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	div {
+		width: 200px;
+		height: 200px;
+		border: 1px solid gray;
+	}
+	
+	/* 
+		position : 좌표를 설정할 수 있다. (left, top, right, bottom) 
+		속성값 : static (생략, 좌표설정 안됨),
+				relative(좌표설정 가능 : 공간을 차지한다.), 
+				absolute(좌표설정 가능 : 공간을 뺀다.)
+				
+		z-index : 양수를 설정하면 값이 높을 수록 위에 표시된다.
+	*/
+	
+	#d1{
+		z-index: 100;
+		background-color: green;
+	}
+
+	#d2{
+		position: absolute;
+		left: 100px;
+		top : 100px;
+		z-index: 5;
+	}
+	
+	#d4{
+		background-color: pink;
+		width: 80px;
+		height: 80px;
+		z-index: 10;
+		position: absolute;
+		left: 100px;
+		top: 100px;
+	}
+	
+	#d3{
+		background-color: #ddd;
+		position: relative;
+		top:50px;
+		z-index: 10;
+	}
+	
+	#d5{
+		width: 100px;
+		height: 100px;
+		background-color: lightblue;
+		position: absolute;
+		top: 30px;
+		left: 30px;
+	}
+	
+	#d6{
+		position: absolute;
+		width: 100px;
+		height: 200px;
+		border: 1px solid gray;
+		background-color: yellow;
+		right: 10px;
+	}
+</style>
+</head>
+<body>
+	<div id="d1">d1</div>
+	<div id="d2">d2
+		<div id="d4">d2 > d4</div>
+	</div>
+	<div id="d3">d3
+		<div id="d5">d3 > d5</div>
+	</div>
+	<div id="d6"></div>
+</body>
+</html>

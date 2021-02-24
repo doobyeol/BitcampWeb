@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>그림자</title>
+<style>
+	div{
+		width: 480px;
+		margin: 50px;
+		line-height:100px;
+		font-size: 3em;
+		border: 1px solid gray;
+		text-align: center;
+	}
+	
+	/* 박스에 그림자 설정 */
+	div:first-child{
+		/*			왼쪽, 오른쪽  위쪽,아래쪽  투명도*/
+		box-shadow: 10px 10px 10px #87879c;
+	}
+	
+	div:nth-child(2){
+		text-shadow: 5px 5px 5px #87879c;
+	}
+	
+	/* 
+		배경 그라데이션 
+		https://www.colorzilla.com/gradient-editor/
+	*/
+	
+	button{
+		width: 100px;
+		height: 40px;
+		line-height : 40px;
+		border:none;
+		border-radius: 50px;
+		color: #fff;
+		cursor: pointer;
+		background: #418dea; /* Old browsers */
+		background: -moz-linear-gradient(-45deg, #418dea 1%, #409695 46%, #5e4baf 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg, #418dea 1%,#409695 46%,#5e4baf 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg, #418dea 1%,#409695 46%,#5e4baf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#418dea', endColorstr='#5e4baf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+	
+	button:active, button:hover{
+		border: none;
+		box-shadow: 3px 3px 10px #87879c;
+	}
+	
+</style>
+</head>
+<body>
+<div>박스에 그림자 설정</div>
+<div>글자에 그림자 설정</div>
+
+<button>Button</button>
+
+</body>
+</html>

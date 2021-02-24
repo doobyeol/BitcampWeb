@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+li{
+	list-style: none;
+}
+
+/* 링크 스타일 */
+
+/* 링크 상태 */
+a:link{
+	text-decoration: none;
+	color: gray;
+}
+
+/* 방문한 링크 상태 */
+a:visited {
+	color: gray;
+}
+
+/* 마우스를 올렸을때 */
+a:hover{
+	font-weight: bold;
+}
+
+
+/* 클릭하고 있을때 */
+a:active {
+	text-decoration: underline;
+	color: pink;
+}

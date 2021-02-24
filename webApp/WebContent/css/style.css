@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+}
+
+div{
+	width:100%;
+}
+
+div > img {
+	width: 309px;
+	float: left;
+}
+
+ul{
+	width:100%;
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+
+li:first-child {
+	height: 40px;
+	background-color: #ef8b9c;
+}
+
+li:nth-child(2){
+	height: 22px;
+	background-color: #5ab1ca;
+}
+
+li:nth-child(3) {
+	position:absolute;
+	width: 134px;
+	top: 60px;
+	left: 300px;
+	height: 359px;
+	background: url(../img/glass1.gif) no-repeat;
+}
+
+li:nth-child(4) {
+	position:absolute;
+	width: 134px;
+	top: 104px;
+	left: 453px;
+	height: 359px;
+	background: url(../img/glass2.gif) no-repeat;
+}
+
+li:last-child {
+	position:absolute;
+	width: 154px;
+	top: 159px;
+	left: 353px;
+	height: 359px;
+	background: url(../img/glass3.gif) no-repeat;
+}

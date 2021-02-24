@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- <script type="text/javascript">
+	function viewer() {
+		var r = document.getElementById("filename").value;
+		alert(r);
+	}
+</script> -->
+
+<!-- 
+	get 방식 전송 : 주소표시줄에 데이터가 표시
+	post 방식 전송 : 데이터를 숨겨서 전송
+	
+ -->
+<body>
+	<h1>form 태그 : 사용자가 정보를 입력 또는 선택할 수 있는 폼 만들기</h1> 			<!-- 파일 업로드시 필요 -->
+	<!-- <form method="post" action="member.jsp?username='홍길동" name="frm" enctype="multipart/form-data"> -->
+	<form>
+		<!-- 
+			input : 아이디, 비밀번호, checkbox, radio, 버튼들
+			select, option
+			textarea
+			
+			name : 변수
+			value : 값
+			placeholder : 안내메시지
+			size : 글자수로 폭설정
+			maxlength : 최대입력문자수 
+			
+		 -->
+
+		아이디 : <input type="text" name="userid" value=""
+				placeholder="아이디를 입력하세요." size="10" maxlength="5" /><br> 
+		비밀번호 : <input type="password" name="userpwd" placeholder="비밀번호 입력" /><br>
+		파일첨부 : <input type="file" name="filename" id="filename" /><br> 
+				<input type="button" onclick="viewer()" value="클릭" /> <br> 
+		체크박스 : <input type="checkbox" name="hoby" value="등산" />등산 
+				<input type="checkbox"name="h1" value="농구" checked/>농구 
+				<input type="checkbox" name="h2" value="배구" />배구<br> 
+		라디오 : <input type="radio" name="gender"value="F" checked/> 여 
+				<input type="radio" name="gender" value="M" /> 남<br>
+		
+		여러줄의 텍스트 : <textarea name="content" rows="5" cols="50">컨텐츠</textarea><br>
+		목록 태그 : <select name="hobby2" size="3" multiple>
+					<option value="독서">독서</option>
+					<option value="등산">등산</option>
+					<option value="바이크" selected>바이크</option>
+					<option value="달리기">달리기</option>
+				</select><br>
+		
+		
+		목록 태그 : <select name="choice">
+					<optgroup label="프론트엔드">
+						<option value="html">html</option>
+						<option value="css">css</option>
+						<option value="javascript" selected>javascript</option>
+					</optgroup>
+					<optgroup label="백엔드">
+						<option value="jsp">jsp</option>
+						<option value="servlet">servlet</option>
+					</optgroup>
+				</select>
+				<br>
+		버튼 : 
+		<input type="button" value="버튼"/>
+		<input type="submit" value="보내기" formaction="member.jsp" formmethod="post" formtarget="_blank" formenctype="multipart/form-data"/>
+		<input type="reset" value="다시쓰기"/> <!-- 폼에 입력된 내용 초기화  -->
+		<button>버튼</button >
+		<input type ="image" src="../img/test.png"/><br>
+		<hr>
+		<!-- 날짜처리 -->
+		date : <input type="date" name="date1"/>년월일<br>
+		datetime-local : <input type="datetime-local" name="date2"/>년월일 시분<br>
+		month : <input type="month" name="date3"/>년 월<br>
+		week : <input type="week" name="date4"/>년단위 주차수<br>
+		color : <input type="color" name="color"/>rgb코드 표<br>
+		number : <input type="number" name="number" min="1" max="10" step="2"/>숫자선택,입력<br>
+		range : <input type="range" name="range" min="1" max="100" value="10"/><br>
+		
+		
+	</form>
+</body>
+</html>

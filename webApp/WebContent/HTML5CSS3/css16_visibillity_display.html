@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img {
+		width: 200px;
+		height: 200px;
+	}
+	/* 
+		객체를 보여주거나 숨김 
+		visibility : hidden(숨김), visible(보임) -> 숨기고 난 객체의 자리를 차지하고 있따.
+		display : none (숨김), block (보임) -> 숨기고 난후 객체의 자리를 반환한다.
+	
+	*/
+	img:nth-child(2):hover {
+		visibility: hidden;
+	}
+	
+	img:nth-child(4):hover {
+		display: none;
+	}
+</style>
+</head>
+<body>
+	<img alt="" src="../img/test.png">
+	<img alt="" src="../img/test.png">
+	<img alt="" src="../img/test.png">
+	<img alt="" src="../img/test.png">
+	<img alt="" src="../img/test.png">
+</body>
+</html>

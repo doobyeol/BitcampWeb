@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width: 500px;
+		height: 100px;
+		border: 1px solid gray;
+	}
+	/* 한줄에 대한 말줄임 */
+	div:first-child{
+		/* 줄바꾸지 않는다. */
+		white-space:nowrap;
+		/* 오버플로우 된 문자열 숨기기 */
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	/* 여러줄에 대한 말줄임 */
+	div:last-child{
+		text-align: left; /* 문자 왼쪽정렬 하지 않으면 말줄임표가 안보일 수 있다. */
+		white-space: normal;
+		line-height: 1.2;
+		height:6em;
+		overflow:hidden;
+		word-wrap: break-word; /* 잘릴 문자를 단어로 설정 */
+		display : -webkit-box;  /* 여백 삽입과 같이 유연한 높이 증가를 위해 플렉스 박스 형태로 변환 */
+		-webkit-line-clamp:4; /* 보여줄 줄의 갯수 */
+		-webkit-box-orient:vertical; /* vertical 박스의 방향설정 */
+	}
+	
+</style>
+</head>
+<body>
+<div>
+S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진 S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진 S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진 S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진
+</div>
+<div>
+S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진 S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진 S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진 S-MAX에 탑재된 새로운 하이브리드 파워트레인은 2.5리터 엣킨슨 사이클 가솔린 엔진
+</div>
+</body>
+</html>

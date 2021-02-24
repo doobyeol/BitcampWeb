@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>border</title>
+<style type="text/css">
+	body{
+		border : 1px solid blue;
+	}
+	
+	ul{
+		/* border-style : dotted; */
+/* 		border-top-style : solid;
+		border-right-style : dashed;
+		border-bottom-style : inset;
+		border-left-style : double; */
+		border-style : solid dashed groove double;
+		
+		/* 선의 두께 */
+/* 		border-top-width : 5px;
+		border-left-width : 2px;
+		border-bottom-width : 15px; */
+		border-width : 1px 2px 3px 5px;
+		
+		/* 선의 색상 */
+		border-color : cyan green;
+		
+		/* 그룹화 */
+		border : solid 2px green;
+		border-radius: 50px 50px;
+	}
+	
+	img{
+		border : solid 10px pink;
+		border-radius: 50px 10px;
+	}
+</style>
+</head>
+<body>
+	<h1>border속성 : 선의 색상, 두께, 모양</h1>
+	<ul>
+		<li>border-style : 선의 모양 (solid : 실선, dotted : 점선, double : 이중선, dashed : 절취선?, none, groove : 홈, inset : 분류선")</li>
+		<li>border-width : 선의 두께</li>
+		<li>border-color : 선의 색상(rgb코드, 컬러명)</li>
+	</ul>
+	
+	<div>
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JAVASCIPT</li>
+		</ul>
+	</div>
+	
+	<img alt="" src="../img/test.png">
+</body>
+</html>

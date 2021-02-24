@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	/* 상태 선택자 */
+	
+	/* :focus -> 커서가 컴퍼넌트 들어오면*/
+	input:focus{
+		background-color: yellow;
+	}
+	
+	/* :checked -> 컴퍼넌트가 체크되면 */
+	input:checked {
+		width: 50px;
+		height: 50px;
+	}
+	
+	/* 
+		disabled : 비활성화 (값을 서버로 가져갈 수 없다.)
+		readonly : 읽기전용 (값은 서버로 가져갈 수 있다.)
+	*/
+	
+	textarea:disabled {
+		color: red;
+		font-size: 1.5em;
+	}
+	
+	/* enabled : 활성화일때 스타일 적용 */
+	input:enabled{
+		background-color: green;
+		color: white;
+	}
+	
+</style>
+</head>
+<body>
+	<form method="post" action="bbb.jsp">
+		<!-- 
+			input : 아이디, 비밀번호, checkbox, radio, 버튼들
+			select, option
+			textarea
+			
+			name : 변수
+			value : 값
+			placeholder : 안내메시지
+			size : 글자수로 폭설정
+			maxlength : 최대입력문자수 
+			
+		 -->
+
+		아이디 : <input type="text" name="userid" value=""
+				placeholder="아이디를 입력하세요." size="10" maxlength="5" value="doobyeol" disabled="disabled"/><br> 
+		비밀번호 : <input type="password" name="userpwd" placeholder="비밀번호 입력" readonly/><br>
+		파일첨부 : <input type="file" name="filename" id="filename" /><br> 
+				<input type="button" onclick="viewer()" value="클릭" /> <br> 
+		체크박스 : <input type="checkbox" name="hoby" value="등산" />등산 
+				<input type="checkbox"name="h1" value="농구" checked/>농구 
+				<input type="checkbox" name="h2" value="배구" />배구<br> 
+		라디오 : <input type="radio" name="gender"value="F" checked/> 여 
+				<input type="radio" name="gender" value="M" /> 남<br>
+		
+		여러줄의 텍스트 : <textarea name="content" rows="5" cols="50" disabled="disabled">컨텐츠</textarea><br>
+		목록 태그 : <select name="hobby2" size="3" multiple>
+					<option value="독서">독서</option>
+					<option value="등산">등산</option>
+					<option value="바이크" selected>바이크</option>
+					<option value="달리기">달리기</option>
+				</select><br>
+		
+		
+		목록 태그 : <select name="choice">
+					<optgroup label="프론트엔드">
+						<option value="html">html</option>
+						<option value="css">css</option>
+						<option value="javascript" selected>javascript</option>
+					</optgroup>
+					<optgroup label="백엔드">
+						<option value="jsp">jsp</option>
+						<option value="servlet">servlet</option>
+					</optgroup>
+				</select>
+				<br>
+		버튼 : 
+		<input type="button" value="버튼"/>
+		<input type="submit" value="보내기" formaction="member.jsp" formmethod="post" formtarget="_blank" formenctype="multipart/form-data"/>
+		<input type="reset" value="다시쓰기"/> <!-- 폼에 입력된 내용 초기화  -->
+		<button>버튼</button >
+		<input type ="image" src="../img/test.png"/>
+	</form>
+</body>
+</html>

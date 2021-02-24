@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table 태그</title>
+</head>
+<body>
+	<h1>표 만들기</h1>
+	<pre>
+		태그
+		table : 표의 시작
+		tr : 1줄 생성
+		th : 헤더 1칸 생성
+		td : 1칸 생성
+		
+		열단위로 처리
+		colgroup
+		col
+		
+		속성
+		width, height : px, %
+		style
+	</pre>
+
+	<table border="1" width="100%" style="color: lightgray">
+		<caption>표의 제목</caption>
+		<colgroup>
+			<col span="2" style="background-image: url(../img/test.png)" />
+			<col style="background-color: pink" />
+		</colgroup>
+		<thead>
+			<tr height="50" style="color: gray">
+				<th width="20%">첫번째줄 1칸</th>
+				<th style="background-color: lightGray;">첫번째줄 2칸</th>
+				<th>첫번째줄 3칸</th>
+				<th>첫번째줄 4칸</th>
+				<th>첫번째줄 5칸</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>두번째줄 1칸</td>
+				<td><img src="../img/test.png" width="100"></td>
+				<td>두번째줄 3칸</td>
+			</tr>
+		</tbody>
+
+		<tfoot>
+			<tr>
+				<td>세번째줄 1칸</td>
+				<td>세번째줄 2칸</td>
+				<td>세번째줄 3칸</td>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+</html>
