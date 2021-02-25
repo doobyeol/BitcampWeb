@@ -2,14 +2,101 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/list.css" type="text/css">
+
 <title>index</title>
+<style>
+	ul, li{
+		margin: 0; padding: 0; list-style: none;
+	}
+	
+	#mainDiv>div:first-of-type{
+		width: 435px;
+	}
+	
+	#mainDiv {
+		width: 641px; border: 1px solid gray; margin: 10px; overflow: hidden;
+	}
+	#mainDiv > div, #mainDiv > div:first-of-type li{
+		float: left;
+	}
+	#mainDiv > div:first-of-type li {
+		width: 178px; margin: 8px; border: 1px solid gray; background: #eee;
+		padding:0 10px; 
+	}
+	
+	/* Topic */
+	
+	#mainDiv> div:nth-of-type(2){
+		margin:8px;
+	}
+</style>
 </head>
 
 <body>
-	<h1>Hello World!</h1>
-
-	<a href="HTML5CSS3/tag01_img.html">tag01_img</a>
-	<a href="HTML5CSS3/tag02_a.html">tag02_a</a>
-
-	<hr>
+<div id="mainDiv">
+	<div>
+		<ul>
+			<li>
+				<a href="#">
+					<p>Q 헐리우드 영화에서 러시안인이 주로 악당으로...</p>
+					<p>A 냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<p>Q 헐리우드 영화에서 러시안인이 주로 악당으로...</p>
+					<p>A 냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p>
+				</a>
+			</li>	
+			<li>
+				<a href="#">
+					<p>Q 헐리우드 영화에서 러시안인이 주로 악당으로...</p>
+					<p>A 냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<p>Q 헐리우드 영화에서 러시안인이 주로 악당으로...</p>
+					<p>A 냉전시대의 산물입니다. 러시아는 미국의 오랜 숙명의 라이벌이기도 하구요...</p>
+				</a>
+			</li>		
+		</ul>
+	</div>
+	
+	<!-- Topic -->
+	<div>
+		<a href="#"> 
+			<img alt="" src="img/tab2_1.png" />
+		</a>
+	</div>
+	
+	<!-- 상식 -->
+	<div>
+		<ul>
+			<li>
+				<a href="#"> 
+					<img alt="" src="img/tab2_2.png"><br>
+					견과류의 하루 적정 섭취량<br>
+				</a>
+				견과류
+			</li>
+			<li>
+				<a href="#"> 
+					<img alt="" src="img/tab2_3.png"><br>
+					날벌레가 빛에 몰려드는 이유<br>
+				</a>
+				날벌레
+			</li>
+			<li>
+				<a href="#"> 
+					<img alt="" src="img/tab2_4.png"><br>
+					냉면의 유래와 역사<br>
+				</a>
+				냉면
+			</li>
+		</ul>
+	</div>
+</div>
+</body>	
 </html>
