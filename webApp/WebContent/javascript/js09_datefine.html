@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>날짜 객체</title>
+<script type="text/javascript">
+	var dateTime = new Date(); // 현재날짜, 시간
+	var dateTime2 = new Date("2021.05.10"); // 초기값을 갖고 생성할수 있다.
+	//											"2021/05/10" , "2021-05-10" 이런 형탤도 가능하다.
+	var dateTime3 = new Date(123456789); // 밀리초 : 1970년 1월 1일 0시 0분 0초부터 시작
+
+	document.write("dateTime=" + dateTime);
+	document.write("<br>dateTime2=" + dateTime2);
+	document.write("<br>dateTime3=" + dateTime3);
+	
+	/*	 
+		년 : getFullYear()
+		월 : getMonth() 1월은 0, 2월은 1...
+		일 : getDate();
+		요일 : getDay()  일요일은 0, 월요일은 1.... 토요일은 6
+		시 : getHours()		  
+		분 : getMinutes()    	
+		초 : getSeconds()		
+	*/
+	
+	var timeTxt = dateTime.getFullYear() + "년 ";
+	timeTxt += (dateTime.getMonth()+1) + "월 ";
+	timeTxt += dateTime.getDate()+"일 ";
+	timeTxt += dateTime.getHours()+ ":" + dateTime.getMinutes() +":" + 
+							dateTime.getSeconds();
+	document.write("<br>",timeTxt);
+	document.write("<br>요일->"+dateTime.getDay());
+		
+	// 마지막날 구하기
+	var date = new Date(dateTime.getFullYear(),dateTime.getMonth()+1, 0);
+	document.write("<br>마지막날-->"+ date.getDate());
+</script>
+</head>
+<body>
+	
+</body>
+</html>

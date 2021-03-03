@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function popupOpen() {
+		// 쿠키를 확인하여 팝업 생성 여부 결정	
+		var cookie = document.cookie;
+		console.log(cookie);
+		if (cookie.indexOf("event") == -1) {
+			window.open("popup.html", "w", "width=500, height=600");
+		}
+		
+	}
+</script>
+</head>
+<body onload="popupOpen()">
+	<h1>쿠키를 이용한 팝업창 띄우기</h1>
+	<p>인터넷 접속자 컴퓨터의 데이터를 저장하는 것을 쿠키라고 한다.</p>
+	<img alt="" src="../img/test.png">
+</body>
+</html>

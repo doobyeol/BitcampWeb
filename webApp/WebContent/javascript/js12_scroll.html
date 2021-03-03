@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function autoScorll() {
+		window.scrollBy(0,10);
+	}
+</script>
+
+</head>
+<body onload="setInterval('autoScorll()', 500);">
+	<div>
+		<script type="text/javascript">
+			for (var i = 1; i <= 5; i++) {
+				document.write("<img src='../img/0" + i + ".png'><br>");
+			}
+		</script>
+	</div>
+</body>
+</html>

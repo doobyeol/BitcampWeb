@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function stringTest() {
+		//				 0 123 4 567 8
+		var txt = "자바스크립트에서 문자열 사용하는 방법...";
+		document.write("txt->" , txt);
+		document.write("<br>length->" , txt.length);
+		document.write("<br>indexOf->" , txt.indexOf('문'));
+		document.write("<br>search->" , txt.search('문자열'));
+		
+		// 문자열 일부 처리 : slice, substring, substr
+		document.write("<br>slice->", txt.slice(2,7)); // 2부터 7앞까지
+		document.write("<br>substring->", txt.substring(2,7))
+		document.write("<br>substr->", txt.substr(2, 5)); // index 2부터 5개 문자 선택
+		// 문자열 일부 치환
+		document.write("<br>replace->", txt.replace("스크립트","script")); // 문자열을 치환
+		
+		var txt2 = "Hello, JavaScript...";
+		
+		// 문자열 대문자 처리
+		document.write("<br>toUpperCase->", txt2.toUpperCase());
+		// 문자열 소문자 처리
+		document.write("<br>toLowerCase->", txt2.toLowerCase());
+		// 문자열 연결
+		document.write("<br>concat->", txt.concat(txt2));
+		// 문자열 index 한문자
+		document.write("<br>charAt->", txt2.charAt(2));
+		// 문자열 첫번째의 코드값 (아스키코드)
+		document.write("<br>charCodeAt->", txt.charCodeAt(0));
+		
+		// 특정 문자로 문자열을 잘라서 배열 변수에 대입하기
+		var arr = txt2.split('a'); // arr[0], arr[1], arr[2]
+		document.write("<br>split->", arr[0],", ",arr[1],", ",arr[2]);
+		// 반복문으로 배열 꺼내기
+		for (var i = 0; i < arr.length; i++) {
+			document.write("<br>[",i,"]=",arr[i]);
+		}
+		
+	}
+	
+	stringTest();
+</script>
+
+</head>
+<!-- <body onload="stringTest();"> -->
+<body>
+	<hr>
+	<img alt="" src="../img/test.png">
+</body>
+</html>

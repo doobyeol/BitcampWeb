@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function cal(){
+		var date = new Date("2021.03.01");
+		//var tab = date.getDay();
+		//alert("");
+		var t = "";
+		for (var i = 0; i < date.getDay(); i++) {
+			t += "<li>&nbsp;</li>";
+		}
+		var finalDay = new Date(date.getFullYear(),date.getMonth()+1,0);
+		for (var i = 1; i <= finalDay.getDate(); i++) {
+			t += "<li>"+i+"</li>";
+		} 
+		document.getElementById("cal").innerHTML = t;
+	}
+	
+</script>
+</head>
+<body onload="cal()">
+	<div>
+		<ul id="cal">
+		</ul>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function mathTest(){
+		var tag="<ul>";
+		
+		var num= 123.4567;
+		
+		// pi구하기
+		tag += "<li>PI=" + Math.PI + "</li>";
+		// 5의 3승
+		tag += "<li>pow=" + Math.pow(5,3)+"</li>"; 
+		// 반올림
+		tag += "<li>round=" + Math.round(num)+"</li>";
+		// 루트
+		tag += "<li>sprt=" + Math.sqrt(10)+"</li>";
+		// 절대값
+		tag += "<li>abs=" + Math.abs(-20)+"</li>";
+		// 올림
+		tag +="<li>ceil=" + Math.ceil(num)+"</li>";
+		// 버림
+		tag +="<li>floor=" + Math.floor(num)+"</li>";
+		// 최댓값
+		tag +="<li>max=" + Math.max(58,69,54,15,456,8746,123,4)+"</li>";
+		// 최소값
+		tag +="<li>min=" + Math.min(58,69,54,15,456,7846,123,4)+"</li>";
+		// 난수								정수화(난수*(큰수-작은수+1))
+		tag +="<li>random=" + Math.random()+"</li>";
+		
+		
+		
+		document.getElementById("view").innerHTML = tag+"</ul>";
+	}
+</script>
+</head>
+<body onload="mathTest()">
+<div id="view"></div>
+</body>
+</html>

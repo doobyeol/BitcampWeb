@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/layout.css" type="text/css"/>
+<script type="text/javascript">
+
+	var n = 0;
+	function txt() {
+		var t = "자바스크립트로 레이아웃 연습중";
+		var box = document.getElementById("txtbox");
+		box.value = t.substr(0,n);
+		n++;
+		if(n > t.length){
+			n = 0;
+		}
+	}
+	
+	function scrFix() {
+		var fix = document.getElementById("fixBox");
+		var s = window.scrollY;
+		if (s > 190) {
+			fix.style.position="fixed";
+			fix.style.top="0";
+		}else{
+			fix.style.position="absolute";
+			fix.style.top="190px";
+		}
+	}
+	
+	function hide() {
+		document.getElementById("skyBox").style.display="none";
+	}
+</script>
+</head>
+<body onload="setInterval('txt()', 100); setInterval('scrFix()', 1);">
+<section>
+		<div id="skyBox" onclick="hide();"></div>
+		<div id="pinkBox">
+			<input id="txtbox" name="txtbox" value="">
+		</div>
+</section>
+	<div id="fixBox">
+		<div id="line"></div>
+		<div id="box">
+			<div id="aBox">aa</div>
+			<div id="bBox">bb</div>
+		</div>
+	</div>
+<section>
+	<img src="../img/cal.jpg">
+	<img src="../img/cal.jpg">
+	<img src="../img/cal.jpg">
+	<img src="../img/cal.jpg">
+	<img src="../img/cal.jpg">
+	<img src="../img/cal.jpg">
+	<img src="../img/cal.jpg">
+</section>
+</body>
+</html>

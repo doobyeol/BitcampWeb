@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>달력만들기</title>
+<script type="text/javascript">
+	function setDate() {
+		var nowDate = new Date();
+		var year = nowDate.getFullYear();
+		var month = nowDate.getMonth()+1;
+		nowDate = new Date(year, month-1, 1); // 1일에 대한 요일 구하기
+		var week = nowDate.getDay(); // 0->1, 1->일....
+		var lastDay = new Date(year, month, 0).getDate();
+		
+		// 년월 출력
+		document.getElementById("title").innerHTML = year + "년 " + month + "월";
+		
+		var weekName = ['일','월','화',	'수','목','금','토'];
+		
+		var dayData = "";
+		for (var i = 0; i < weekName.length; i++) { // 일,월,화,수,목,금,토
+			dayData += "<li>" + weekName[i] + "</li>";
+		}
+		// 공백문자
+		for (var i = 0; i < week; i++) {
+			dayData += "<li>&nbsp;</li>";
+		}
+		// 날짜
+		for (var i = 1; i <= lastDay; i++) {
+			dayData += "<li>" + i + "</li>";
+		}
+		
+		document.getElementById("day").innerHTML = dayData;
+	}
+</script>
+
+<style type="text/css">
+	ul, li{margin:0; padding:0; list-style: none;}
+	
+	#cal{
+		width: 500px;
+	}
+	
+	#cal > img{
+		width: 100%;
+	}
+	
+	#title, #day>li{
+		text-align: center;
+	}
+	
+	#day > li{
+		float:left;
+		width: 14.2%;
+	}
+</style>
+</head>
+
+<body onload="setDate()">
+	<div id="cal">
+		<img alt="" src="../img/cal.jpg">
+		<h1 id="title"></h1>
+		<ul id="day"></ul>
+	</div>
+</body>
+</html>

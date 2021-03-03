@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 시작</title>
+<style type="text/css">
+	body{
+		font-size:2em;
+	}	
+</style>
+<script lang="javascript">
+	// 한줄 주석
+	/* 여러줄 주석 */
+	/* 자바스크립트에서 body에 문자 표시하기 */
+	document.write("자바스크립트에서 표시한 문자<br>");
+	
+	/* 자바스크립트에서 html태그 넣을땐 문자열로 사용 */
+	document.write("자바스크립트에서 <b>표시한</b> 문자<br>");
+	document.write("자바스크립트에서 <b>표시한</b> 문자<br>");
+
+	var r = "1 + 2 + 3";
+	document.write("r=" + r);
+	
+	var r2 = eval("1+2+3");
+	document.write("r2=" + r2);
+	
+	var r3 = eval("<img src='../img/test.png'");
+	r3.src = "../img/wine1.jpg";
+	document.write(r3);
+	</script>
+<script src="script.js"></script>
+</head>
+<body>
+	<form name="frm">
+		<input type="text" name="username" value="홍길동">
+	</form>
+	<br>
+	<img alt="" src="../img/test.png">
+	<script>
+		document.write("<img src='../img/test.png'/>")
+		/* ""와 ''의 위치가 바뀌어도 사용가능하다. */
+		document.write('<img src="../img/test.png"/>')
+		document.write("<h1>;세미콜론을 생략할 수 있다.</h1>");
+		
+		document.frm.username.value="세종대왕~~";
+	</script>
+</body>
+</html>
+
+<script>
+	document.write("html밑에서 자바스크립트를 실행...")
+</script>

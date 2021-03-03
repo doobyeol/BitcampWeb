@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul, li{
+		padding:0; margin:0; list-style: none;
+	}
+	section{
+		width: 785px;
+		margin: 0 auto;
+		display: flex;
+	}
+	div{
+		width: 738px;
+		height:118px;
+		overflow: hidden;
+	}
+	
+	ul {
+		position: relative;
+		right: 0;
+		display: flex;
+	}
+	
+	button{
+		height:114px;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	var n=1;
+	var timer;
+	function count() {
+		document.getElementById("pic").style.right= n + "px";
+		n++;
+		if (n > 902) {
+			clearInterval(timer);
+			timer = setInterval("reverse()", 30);
+		} 
+	}
+	
+	function reverse(){
+		document.getElementById("pic").style.right= n + "px";
+		n--;
+		if (n < 0) {
+			clearInterval(timer);
+			timer = setInterval("count()", 30);
+		} 
+	}
+	
+	function stop() {
+		clearInterval(timer);
+	}
+	
+	function slideBnr() {
+		timer = setInterval("count()", 30); 
+	}
+	
+	function rightBtn() {
+		clearInterval(timer);
+		timer = setInterval("reverse()", 30);
+	}
+	
+	function leftBtn() {
+		clearInterval(timer);
+		timer = setInterval("count()", 30);
+	}
+</script>
+</head>
+<body onload="slideBnr()">
+<section>
+<button onclick="leftBtn();" onmousedown="leftBtn();">&lt;</button>
+<div>
+	<ul id="pic" onmouseover="stop();" onmouseout="slideBnr()">
+			<script type="text/javascript">
+				for (var i = 1; i <= 20; i++) {
+					if (i < 10) {
+						document.write("<li><img src='../postImg/movie0" + i + ".png'></li>");
+					}else{
+						document.write("<li><img src='../postImg/movie" + i + ".png'></li>");
+					}
+				}
+			</script>
+	</ul>
+</div>
+<button onclick="rightBtn();" onmousedown="rightBtn();">&gt;</button>
+</section>
+</body>
+</html>
