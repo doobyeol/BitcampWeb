@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		margin:0;
+	}
+
+	#header1, #header2{
+		width:800px;
+		height: 100px;
+		margin: 0 auto;
+	}
+	
+	#header1{
+		background: gray;
+	}
+
+	#header2{
+		background: pink;
+	}
+	
+	#bar{
+		position:relative;
+		height: 3px;
+		background: blue;
+		z-index: 100;
+	}
+	
+	#content{
+		width: 800px;
+		margin: 0 auto;
+		position:relative;
+		background: #eee;
+	}
+	
+	img{
+		width: 800px;
+	}
+	
+	/* 배너 */
+	#leftBnr, #rightBnr{
+		position: absolute;
+		width:100px;
+		top:0;
+	}
+	
+	#leftBnr{
+		height:300px;
+		left:-100px;
+		background: lightblue;
+	}
+	
+	#rightBnr{
+		left:800px;
+		height: 400px;
+		background: yellow;
+	}
+	
+</style>
+<script type="text/javascript">
+	function event1() {
+		document.getElementById("header1").addEventListener('click',function(){
+			document.getElementById("header1").style.display="none";
+		});
+	}
+	
+	function bannerMove() {
+		var scrollY = window.scrollY // 현재 스크롤 바 위치
+		// 헤더 높이 구하기
+		var top = 200;
+		if (document.getElementById("header1").style.display=="none") {
+			top=100;
+		}
+		
+		var bar = document.getElementById("bar").style;
+		var lBnr = document.getElementById("leftBnr").style;
+		var rBnr = document.getElementById("rightBnr").style;
+		
+		if (scrollY > top) { // 스크롤바가 top보다 내려갔을때
+			bar.top = scrollY-top+"px";
+			lBnr.top = scrollY-top+"px";
+			rBnr.top = scrollY-top+"px";
+		}else{
+			bar.top = "0px";
+			lBnr.top = "0px";
+			rBnr.top = "0px";
+		}
+	}
+	
+	var idx = 0;
+	
+	function txtTyping() {
+		var str = "타이핑 문자처리 하기 연습중..";
+		var cutText = str.substr(0, idx++); // str.substring(0,idx++); str.slice(0,idx++);
+		document.getElementById("txt").placeholder = cutText;
+		
+		// 문자열 자르기 초기
+		if (idx > str.length) {
+			idx= 1;
+		}
+	}
+</script>
+</head>
+<body onload="event1(); setInterval('txtTyping()',100);" onscroll="bannerMove();">
+	<div id="header1"></div>
+	<div id="header2">
+		<input type="text" id="txt">
+	</div>
+	<div id="bar"></div>
+	<div id="content">
+		<img alt="" src="../img/cal.jpg">
+		<img alt="" src="../img/cal.jpg">
+		<img alt="" src="../img/cal.jpg">
+		<img alt="" src="../img/cal.jpg">
+		<!-- 배너 -->
+		<div id="leftBnr">a</div>
+		<div id="rightBnr">b</div>
+	</div>
+</body>
+</html>

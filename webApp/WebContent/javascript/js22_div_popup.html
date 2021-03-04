@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		margin: 0;
+	}
+	
+	#content{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	#content > img{
+		width: 48%;
+	}
+	
+	/* 팝업 스타일 */
+	#popup{
+		width: 400px;
+		position:absolute;
+		border: 1px solid #eee;
+		background: #fff;
+		z-index: 1111;
+	}
+	
+	#popup > div{
+		float: left;
+	}
+	 
+	#pContent > img{
+		width: 400px;
+		height: 400px;
+	}
+	
+	
+ 	#bg{
+ 		display:none;
+		width: 100vw;
+		height:100vh;
+		position: absolute;
+		top:0;
+		background-color: rgb(0, 0, 0, 0.5);
+		z-index: 0;
+	 } 
+	 
+	 
+	#pTitle{
+		width: 90%;
+		height: 40px;
+		line-height:40px;
+		background: pink;
+	}
+	
+	#pClose{
+		width: 10%;
+		height: 40px;
+		line-height: 40px;
+		text-align:center;
+		background: #eee;
+	}
+	
+	#pContent{
+		width:100%;
+		background: #fff;
+	}
+	
+</style>
+<script type="text/javascript">
+	var popup;
+	var bg;
+	function setXY() {
+		bg = document.getElementById("bg").style;
+		var cookie = document.cookie;
+		console.log(cookie);
+		if (cookie.indexOf("event") == -1) {
+			bg.display="block";
+			popup = document.getElementById("popup").style;
+	 		popup.left="300px";
+			popup.top="200px"; 
+			document.body.style.overflow="hidden";
+		}
+		
+	}
+	
+	/* 팝업 닫기 */
+	function setPopupClose() {
+		document.body.style.overflow="inherit";
+		bg.display="none";
+	}
+	
+	/* 팝업 이동 */
+	var eventX, eventY, divX, divY, moveX, moveY, flag=false;
+	function setMoveStart() {
+		// 드래그 시작 true
+		flag = true;
+		
+		// 마우스를 누르면 이벤트가 발생한곳 외 x, y좌표를 구한다.
+		eventX = event.clientX;
+		eventY = event.clientY;
+		
+		// 팝업창의 좌표 구하기
+		divX = parseInt(popup.left);
+		divY = parseInt(popup.top);
+		
+		//console.log('eventX->', eventX, ', eventY->',eventX);
+		//console.log('divX->', divX , ', divY->', divY);
+		
+		// 마우스를 이동하면 이동한 곳은 이벤트 x, y좌표를 구한다.
+		document.onmousemove = setMouseDrag;
+	}
+	
+	function setMouseDrag() {
+		if (flag) {
+			moveX = event.clientX;
+			moveY = event.clientY;
+			
+			// 나중에 발생한 이벤트 좌표 - 이전에 발생한 이벤트 좌표
+			var x = moveX - eventX;
+			var y = moveY - eventY;
+			
+			// 팝업 이동하기
+			popup.left = divX + x +"px";
+			popup.top = divY + y + "px";
+		}
+	}
+	
+	function setFlag() {
+		flag = false;
+	}
+	
+	// 마우스 클릭을 놓았을때
+	document.onmouseup = setFlag;	
+	
+	function closeBtn() {
+		// 체크박스의 상태 확인
+		if(document.getElementById("cookieCheck").checked){ // checked:true, 아니면 false
+			// 쿠키를 저장한다.
+			// 변수, 데이터(값), 저장위치, 소멸시간을 설정
+			// 날짜
+			var now = new Date(); // 현재날짜
+			// 1일 후 날짜 구하기
+			now.setDate(now.getDate()+1);
+			// 								변수		데이터	저장경로 / 기본경로	 소멸되는시점
+			document.cookie = "event=3월; path=/; expires=" + now+";";
+		}
+		
+		// 팝업창을 닫는다.
+		setPopupClose();
+	}
+</script>
+</head>
+<body onload="setXY();">
+<div id="content">
+	<h1>Div를 이용한 팝업 만들기</h1>
+	<button onclick="setXY();">팝업</button>
+	<iframe src="js20_imageSlider.html" width="920px" height="134px" frameborder="0"></iframe>
+	<hr>
+	<img alt="" src="../img/test.png">
+	<img alt="" src="../img/test.png">
+	<img alt="" src="../img/test.png">
+	<img alt="" src="../img/test.png">
+</div>
+
+<!-- 팝업 div 만들기 -->
+<div id="bg">
+	<div id="popup">
+		<div id="pTitle" onmousedown="setMoveStart();">이벤트</div>
+		<div id="pClose" onclick="setPopupClose();">x</div>
+		<div id="pContent">
+			<img alt="" src="../img/test.png">
+			<input type="checkbox" id="cookieCheck">
+	 			하루동안 열지 않기
+	 		<input type="button" id="closeBtn" value="Close" onclick="closeBtn()">
+		</div>
+	</div>
+</div>
+</body>
+</html>
