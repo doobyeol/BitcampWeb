@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body, ul, li, p{
+		margin:0; padding:0; list-style: none;
+	}
+	
+	section{
+		width: 500px;
+		margin: 0 auto;
+	}
+	#imgList {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	#imgList img{
+		width: 100px;
+		cursor: pointer;
+	}
+	
+	/* 팝업창 */
+	#popBg{
+		display: none;
+		width:100vw;
+		height:100vh;
+		position: fixed;
+		top:0;
+		background-color: rgb(0, 0, 0, 0.5);
+	}
+	
+	#popup{
+		width: 500px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	#popup p{
+		width: 100%;
+		line-height: 40px;
+		text-align: center;
+		background: #eee;
+	}
+	
+	#popup img{
+		width: 500px;
+		cursor: pointer;
+	}
+	
+</style>
+<script type="text/javascript">
+	// 이미지 리스트 출력
+	var txt ="";
+	function setImg() {
+		for (var i = 0; i < 10; i++) {
+			for (var j = 1; j < 13; j++) {
+				if (j < 10) {
+					txt += "<li><img id='img" + j + "'src ='img/0" + j + ".png' onclick='viewPop(this.src)'></li>";
+				}else{
+					txt += "<li><img id='img" + j + "'src ='img/" + j + ".png' onclick='viewPop(this.src)'></li>";
+				}
+			}
+		}
+		document.getElementById("imgList").innerHTML = txt;
+	}
+	
+	function viewPop(src) {
+		var popBg = document.getElementById("popBg").style;
+		/* 팝업 보이기 */
+		popBg.display="block";
+		
+		// 넘겨받은 경로에서 이미지명만 남기기
+		var imgName = src.replace(/^.*\//, '');
+		// 팝업창에 해당이미지 불러오기
+		var insertImg = "<img id ='img' src='img/" + imgName + "' onclick='closePop()'>";
+		
+		document.getElementById("popup").innerHTML = "<p>" + imgName + "</p>" + insertImg;
+		document.getElementById("title").innerHTML = imgName;
+	}
+	
+	/* 팝업 닫기  */
+	function closePop() {
+		var popBg = document.getElementById("popBg").style;
+			popBg.display="none";
+	}
+</script>
+</head>
+<body onload="setImg();">
+	<section>
+		<ul id="imgList">
+		</ul>		
+	</section>
+	
+	<div id="popBg">
+		<div id="popup">
+<!-- 			<p id="title">test.png</p>
+			<img id ="img" src="img/01.png"> -->
+		</div>
+	</div>
+</body>
+</html>
