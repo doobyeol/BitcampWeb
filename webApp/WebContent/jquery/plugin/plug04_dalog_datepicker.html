@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	dialog, datepicker 라이브러리
+	
+	불러오는 순서
+	1. jquery-ui 스타일 시트
+	2. jquery 스크립트 
+	3. jquery-ui 스크립트
+ -->
+<link rel="stylesheet" href="../lib/jquery-ui.min.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../lib/jquery-ui.min.js"></script>
+<style type="text/css">
+	body{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	#dialogOpen {
+		font-size: 1.5em;
+		background: pink;
+		text-align: center;
+	}
+	#schedule{
+		background: lightblue;
+		font-size: 1.2em;
+		text-align: center;
+	}
+	
+	h1{
+		text-align: center;
+		font-size: 1.5em;
+	}
+	
+	#event-name, #event-date{
+		width: 95%;
+	}
+</style>
+<script type="text/javascript">
+	$(function() {
+		// 다이얼로그 창 띄우기
+		$('#dialogOpen').click(function() {
+			$('#dialog').dialog('open'); // 매개변수값을 open 변수
+		});
+		
+		// 다이얼로그 
+		$('#dialog').dialog({
+			autoOpen : false ,// 실행될때 자동으로 다이얼로그 열기 : true, false 
+			buttons : {
+				submit : function() {
+					var name = $('#event-name').val();
+					var date = $('#event-date').val();
+					
+					$('#schedule').append('<p>' + date +' : ' + name + '</p>');
+					
+					// 일정 지우기
+					$('#event-name').val('');
+					$('#event-date').val('');
+				},
+				reset : function() {
+					// 일정 지우기
+					$('#event-name').val('');
+					$('#event-date').val('');
+				}, 
+				close : function() {
+					// 일정 지우기
+					$('#event-name').val('');
+					$('#event-date').val('');
+					$('#dialog').dialog('close');
+				}
+			},
+			modal : true // 모달 사용여부 (다이얼로그가 뜨면 배경비활성)
+		});
+		
+		// event-date에 DatePicker설정
+		$('#event-date').datepicker({
+			dateFormat : 'yy년 mm월 dd일', // 날짜를 표시할 형식 y(두자리),yy(네자리)
+			numberOfMonths : 2, // 한번에 보일 개월 수
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="dialogOpen">일정등록</div>
+	<hr>
+	<div id="schedule">일정이 표시되는 곳</div>
+	<!-- 다이얼로그 -->	
+	<!-- title속성의 값이 다이얼로그 창의 제목으로 사용됨  -->
+	<div id="dialog" title="Dialog & DatePicker"> 
+		<h1>일정을 등록하세요..</h1>
+		<label for="event-name">일정이름 : </label><input type="text" id="event-name"><br>
+		<label for="event-date">날짜선택 : </label><input type="text" id="event-date">
+	</div>
+</body>
+</html>

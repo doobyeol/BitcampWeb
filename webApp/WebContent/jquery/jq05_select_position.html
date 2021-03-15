@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>위치 선택자</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 위치 선택자
+		$('ol>li:first').css('color','red'); // li중에 첫번째 객체 선택
+		$('ol>li:last').css('color','blue'); // li중에 마지막 객체 선택
+		
+		$('ol>li:even').css('background-color','pink'); // index --> 0번째부터 짝수객체 선택
+		$('ol>li:odd').css('background-color','lightblue'); // index --> 0번째부터 홀수객체 선택
+	
+		// nth-last-of-type() : 마지막에서 순서대로 선택
+		$('ol>li:nth-last-of-type(3)').css('color','green');
+		// nth-child(3n) : 3의배수 선택
+		$('ol>li:nth-child(3n)').css('border-bottom','2px solid red'); // index --> 1번째 부터
+		
+		// slice() : index위치에서 끝까지 객체 선택
+		$('ol>li').slice(3).css('font-size','3em');
+		// eq() : index위치의 객체 선택
+		$('ol>li').eq(3).css('color','red');
+		
+		// :lt() : index 위치보다 작은 위치 선택
+		// :gt() : index 위치보다 큰 위치 선택
+		
+		$('ol>li:lt(4)').css('font-family','궁서체');
+		$('ol>li:gt(4)').css('color','cyan');
+		
+		// 부모객체 중에서 자손이 1개인 객체 선택
+		$('li:only-child').css('background-color','yellow').css('border','2px solid red');
+	})
+</script>
+
+</head>
+<body>
+	<ol>
+		<li>html</li>
+		<li>css</li>
+		<li>javascript</li>
+		<li>jquery</li>
+		<li>bootstrap</li>
+		<li>ajax</li>
+		<li>jsp(java server page)</li>
+		<li>spring framework</li>
+	</ol>
+	
+	<ul>
+		<li>위치선택자</li>
+	</ul>
+</body>
+</html>

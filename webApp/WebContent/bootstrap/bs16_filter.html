@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#myInput').keyup(function() { // 소문자로 바꾸기
+			var value = $(this).val().toLowerCase();  // 검색어로 입력한 문자열 $('#myInput').val()
+			$('#memList>tr').filter(function() {
+				var idx = $(this).text().indexOf(value); // 0~n -1 (0보다 크면 문자열존재)
+				// 						true:그냥둠, false:숨김
+				$(this).toggle(idx > -1);
+			});
+		})
+	});
+</script>
+<script src="lib/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Filter Test...</h1>
+		<input type="text" id="myInput" placeholder="Search...">
+		<hr>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<td>이름</td>
+					<td>아이디</td>
+					<td>연락처</td>
+					<td>주소</td>
+				</tr>
+			</thead>
+			<tbody id="memList">
+				<tr>
+					<td>홍길동</td>
+					<td>hong gil dong</td>
+					<td>010-1234-5678</td>
+					<td>서울시 양천구</td>
+				</tr>
+				<tr>
+					<td>김길동</td>
+					<td>kim gil dong</td>
+					<td>010-1234-5678</td>
+					<td>서울시 양천구</td>
+				</tr>
+				<tr>
+					<td>박길동</td>
+					<td>park gil dong</td>
+					<td>010-1234-5678</td>
+					<td>서울시 양천구</td>
+				</tr>
+				<tr>
+					<td>이길동</td>
+					<td>lee gil dong</td>
+					<td>010-1234-5678</td>
+					<td>서울시 양천구</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

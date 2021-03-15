@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	아코디언 메뉴
+	https:github.com/alaingoga
+	
+	불러오는 순서
+	1. accordion 스타일시트
+	2. jquery
+	3. jquery ui
+	4. accordion 스크립트
+ -->
+<link rel="stylesheet" href="accordionImageMenu.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../lib/jquery-ui.min.js"></script>
+<script src="jquery.accordionImageMenu.js"></script>
+<style type="text/css">
+	.container{
+		width: 1000px;
+		margin: 0 auto;
+	}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$('#accordion').AccordionImageMenu({
+			position: 'horizontal', // horizontal(기본),vertical(방향->)
+			openItem : 5, // 기본선택목록 (index5의 위치 이미지 확장)
+			openDim : 400, // 확장된 목록의 크기px (horizontal이면 width, vertical이면 height)
+			closeDim : 150, // 닫힌 목록의 크기px
+			// width, height
+			//width : 800, // position이 vertical일때 적용
+			height : 500, // position이 horizontal일때 적용
+			duration : 2000, // 전환속도 밀리초
+			effect : 'easeOutBounce', // easing
+			border : 2, // 목록사이에 보더
+			color : '#eee' // 배경색
+		});
+	})
+</script>
+</head>
+<body>
+<div class="container">
+	<ul id="accordion">
+		<li><a href="https://www.nate.com"><img alt="" src="../../img/01.png" title="첫번째 이미지 설명"></a></li>
+		<li><a href="https://www.naver.com"><img alt="" src="../../img/02.png" title="두번째 이미지 설명"></a></li>
+		<li><a href="https://www.daum.net"><img alt="" src="../../img/03.png" title="세번째 이미지 설명"></a></li>
+		<li><a href="#"><img alt="" src="../../img/04.png" title="네번째 이미지 설명"></a></li>
+		<li><a href="#"><img alt="" src="../../img/05.png" title="다섯번째 이미지 설명"></a></li>
+		<li><a href="#"><img alt="" src="../../img/06.png" title="여섯번째 이미지 설명"></a></li>
+	</ul>
+</div>
+</body>
+</html>

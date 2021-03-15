@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상태 선택자</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 상태선택자
+		//:text -> 속성값이 text인 객체를 선택한다.
+		$(':text').css('background-color','pink');
+		
+		// :checked -> 속성값이 checked인 객체를 선택한다.
+		$(':checked').attr('checked', false);
+		
+		// :selectedIndex -> 선택된 목록의 인덱스
+		console.log($('#site').prop('selectedIndex'), $('#site').val());
+		
+		// :selected -> 속성값이 selected인 객체를 선택한다.
+		$(':selected').attr('selected',false);
+		
+		// 컨텐츠 선택자
+		$('p').css('margin','10px').css('padding','10px').css('border','3px green solid');
+		
+		// contains() : 특정 문자열이 포함된 경우 선택
+		$('p:contains("4월")').css('background-color','pink');
+		
+		// has() : 하위에 특정 태그가 포함되면 선택
+		$('p:has("b")').css('color','red');
+		
+		// not() : 특정선택자를 제외한 나머지를 선택한다.
+		$('p:not(:first)').css('color','blue');
+		
+		// closest() : 조상 선택자
+		$('i').closest('p').css('border','3px dashed #ccc');
+		
+		// filter() : 하위객체 탐색
+		$('p').filter('.c1').css('text-decoration','underline')
+		
+		// contents() : 선택자의 하위 내용이 다른 태그에 포함된경우
+		$('p').contents().css('font-size','2em');
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>
+			4월 08, 2021 9:29:37 <b>오전 org.apache.catalina.startup.VersionLoggerListener log</b>
+			INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+			3월 08, 2021 9:29:37 오전 org.apache.catalina.startup.VersionLoggerListener log
+			INFO: 명령 행 아규먼트:  -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.0
+			3월 08, 2021 9:29:37 오전 org.apache.catalina.startup.VersionLoggerListener log
+			INFO: 명령 행 아규먼트:  -Dwtp.deploy=D:
+		</p>
+		<p class="c1">
+			3월 08, 2021 9:29:37 오전 org.apache.catalina.startup.VersionLoggerListener log
+			INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+			3월 08, 2021 9:29:37 오전 org.apache.catalina.startup.VersionLoggerListener log
+			INFO: 명령 행 아규먼트:  -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.0
+			3월 08, 2021 9:29:37 오전 org.apache.catalina.startup.VersionLoggerListener log
+			INFO: 명령 행 아규먼트:  -Dwtp.deploy=D:
+		</p>
+		<p class="c1">
+			3월 08, 2021 9:29:37 <i>오전 org.apache.catalina.startup.VersionLoggerListener log</i>
+			INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+			3월 08, 2021 9:29:37 오전 org.apache.catalina.startup.VersionLoggerListener log
+			INFO: 명령 행 아규먼트:  -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.0
+			3월 08, 2021 9:29:37 오전 org.apache.catalina.startup.VersionLoggerListener log
+			INFO: 명령 행 아규먼트:  -Dwtp.deploy=D:
+		</p>
+	</div>
+	<form action="">
+		<ul>
+			<li><label>이름</label></li>
+			<li><input type="text" name="username" id="username"></li>
+			<li><label>연락처</label></li>
+			<li><input type="text" name="tel" id="tel"></li>
+			<li><label>사용동의여부</label></li>
+			<li>
+				<input type="radio" name="accept" id="yes" checked>동의
+				<input type="radio" name="accept" id="no">동의안함
+			</li>
+			<li><label>자주가는사이트</label></li>
+			<li>
+				<select name="site" id="site">
+					<option value="not">==직접선택==</option>
+					<option value="daum">다음</option>
+					<option value="nate" selected>네이트</option>
+					<option value="naver">네이버</option>
+				</select>
+			</li>
+			<li>
+				<input type="button" value="확인">
+			</li>
+		</ul>
+	</form>
+</body>
+</html>

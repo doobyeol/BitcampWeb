@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Collapse 예</h1>
+		<!-- 버튼 선택하면 컨텐츠보기를 활성/비활성 할 수 있는 기능 만들기 -->
+		<button class="btn btn-success" data-target="#view1" data-toggle="collapse">클릭하세요..</button>
+		<div id="view1" class="collapse show">
+			<img alt="" src="../img/05.png">
+		</div>
+		<hr>
+		<button class="btn btn-secondary" data-target="#view2" data-toggle="collapse">내용보기/내용닫기</button>
+		<div id="view2" class="collapse show">
+			INFO: 프로토콜 핸들러 ["http-nio-9090"]을(를) 시작합니다.
+			3월 15, 2021 9:40:50 오전 org.apache.catalina.startup.Catalina start
+			INFO: 서버가 [310] 밀리초 내에 시작되었습니다.
+		</div>
+		
+		<h1>accordion 예</h1>
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header card-link" data-target="#v1" data-toggle="collapse" data-parent="#accordion">아코디언 적용예제</div>
+				<div id="v1" class="collapse">
+					INFO: 프로토콜 핸들러 ["http-nio-9090"]을(를) 시작합니다.
+					3월 15, 2021 9:40:50 오전 org.apache.catalina.startup.Catalina start
+					INFO: 서버가 [310] 밀리초 내에 시작되었습니다.
+				</div>
+			</div>
+						<div class="card">
+				<div class="card-header card-link" data-target="#v2" data-toggle="collapse" data-parent="#accordion">아코디언 적용예제</div>
+				<div id="v2" class="collapse show">
+					<img alt="" src="../img/06.png">
+				</div>
+			</div>
+						<div class="card">
+				<div class="card-header card-link" data-target="#v3" data-toggle="collapse" data-parent="#accordion">아코디언 적용예제</div>
+				<div id="v3" class="collapse">
+					INFO: 프로토콜 핸들러 ["http-nio-9090"]을(를) 시작합니다.
+					3월 15, 2021 9:40:50 오전 org.apache.catalina.startup.Catalina start
+					INFO: 서버가 [310] 밀리초 내에 시작되었습니다.
+				</div>
+			</div>
+						<div class="card">
+				<div class="card-header card-link" data-target="#v4" data-toggle="collapse" data-parent="#accordion">아코디언 적용예제</div>
+				<div id="v4" class="collapse">
+					INFO: 프로토콜 핸들러 ["http-nio-9090"]을(를) 시작합니다.
+					3월 15, 2021 9:40:50 오전 org.apache.catalina.startup.Catalina start
+					INFO: 서버가 [310] 밀리초 내에 시작되었습니다.
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

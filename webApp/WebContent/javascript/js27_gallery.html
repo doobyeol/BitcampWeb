@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+   #mainDiv{
+      width:900px;
+      margin:0 auto;
+   }
+   #mainDiv>img{
+      width:150px;
+   }
+   #modal{
+      background-color:gray;
+      opacity:0.4;
+      position:absolute;
+      left:0px;
+      top:0px;
+      width:100%;
+      display:none;
+   }
+   #bigShow{
+      width:500px;
+      border:1px solid gray;
+      border-radius:5px;
+      background-color:#ddd;
+      position:absolute;
+      top:0;
+      left:0;
+      display:none;
+      z-index: 100;
+   }
+   #filename{
+      font-size:1em;
+      text-align:center;
+      width:500px;
+      height:40px;
+      line-height:40px;
+      background-color:#ccc;
+   }
+   #bigImage{
+      width:500px;
+   }
+</style>
+<script type="text/javascript">
+	function setImage() {
+		var tag ="";
+		for (var j = 0; j < 10; j++) {
+			for (var i = 1; i < 13; i++) {
+				tag += "<img src='../img/";
+				if (i < 10) {
+					tag += "0";
+				}
+				tag += i+".png' onclick='bigShowStart(this.src)'>";
+			}
+		}
+		document.getElementById("mainDiv").innerHTML = tag;
+	}
+	
+	function bigShowStart(filename) {
+		// 모달
+		var modal = document.getElementById("modal");
+		modal.style.display = "block";
+		// 컨텐츠 높이만큼 모달 높이를 지정
+		// document.body.scrollHeight; 
+		// document.documentElement.clientHeight;
+		modal.style.height = document.body.scrollHeight + "px";
+		//modal.style.height = document.documentElement.clientHeight + "px;"
+		
+		// 큰 이미지
+		// 마우스를 클릭 좌표구하기
+		var x = event.clientX - 250;
+		var y = event.clientY + window.scrollY;
+		var bigShow = document.getElementById("bigShow");
+		bigShow.style.display="block";
+		bigShow.style.left = x+"px";
+		bigShow.style.top= y+"px";
+		
+		document.getElementById("filename").innerHTML = filename.substring(filename.lastIndexOf("/")+1);
+		document.getElementById("bigImage").src = filename;
+	}
+	
+	function bigShowClose() {
+		document.getElementById("modal").style.display = "none";
+		document.getElementById("bigShow").style.display ="none";
+	}
+	
+	/* div 이동 */
+	var flag = false, bigX, bigY, x, y;
+	function moveStart() {
+		flag=true;
+		bigX = parseInt(document.getElementById("bigShow").style.left);
+		bigY = parseInt(document.getElementById("bigShow").style.top);
+		x = event.clientX;
+		y = event.clientY;
+		
+		document.onmousemove = divMove;
+	}
+	
+	function divMove() {
+		if (flag == true) {
+			document.getElementById("bigShow").style.left = (event.clientX-x) + bigX + "px";
+			document.getElementById("bigShow").style.top = (event.clientY-y) + bigY + "px";
+		}
+	}
+	
+	function divClose() {
+		flag=false;
+	}
+	
+	document.onmouseup = divClose;
+	
+</script>
+</head>
+<body onload="setImage()">
+	<div id="mainDiv"></div>
+	<!-- 모달 -->
+	<div id="modal"></div>
+	<div id="bigShow">
+		<div id="filename" onmousedown="moveStart()"></div>
+		<img src="../img/01.png" id="bigImage" onclick="bigShowClose()">
+	</div>
+</body>
+</html>

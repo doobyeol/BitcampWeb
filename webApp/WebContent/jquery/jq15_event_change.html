@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 컬러명 설정
+		var cCode= ['red','rgb(249,234,106)','#0f0','pink','#fff','#000','#00f'];
+		var cName= ['빨강','노랑','green','pink','하얀색','블랙','파랑'];
+		
+		cCode.map(function(value, index) {
+			var tag = '<option value="' + value + '">'+ cName[index] +'</option>'
+			$('#colorName').append(tag);
+		});
+		
+		// 이벤트
+		// $('#colorName').on('change',function(){})
+		$('#colorName').change(function() {
+			$('article').css( $('#choiceColor').val(),$('#colorName').val());
+		})
+		
+		// 글자가 점점 크거나 작아지는 처리
+		$('input').on('click', function() {
+			console.log( $('article').css('font-size'));
+			
+			// 버튼들 중에 index를 구하여 선택된 버튼 알아내기
+			var idx = $('#menu>input').index(this);
+			console.log(idx);
+			
+			//현재 글자 크기
+			var size = parseInt($('article').css('font-size'));
+			if (idx==0) {
+				size--;
+			}
+			if (idx==1) {
+				size=16;
+			}
+			if (idx==2) {
+				size++;
+			}
+			
+			$('article').css('font-size', size +'px');
+			
+		})
+	})
+</script>
+</head>
+<body>
+	<div id="menu">
+		<select id="choiceColor">
+			<option value="background">배경색</option>
+			<option value="color">글자색</option>
+		</select>
+		<select id="colorName"></select>
+		<input type="button" value="-">
+		<input type="button" value="0">
+		<input type="button" value="+">
+		<article>
+			INFO: 서버 엔진을 시작합니다: [Apache Tomcat/10.0.2]
+			3월 10, 2021 9:52:32 오전 org.apache.coyote.AbstractProtocol start
+			INFO: 프로토콜 핸들러 ["http-nio-9090"]을(를) 시작합니다.
+			3월 10, 2021 9:52:32 오전 org.apache.catalina.startup.Catalina start
+			INFO: 서버가 [353] 밀리초 내에 시작되었습니다.
+		</article>
+	</div>
+</body>
+</html>

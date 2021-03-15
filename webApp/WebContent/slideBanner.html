@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+	body, ul, li{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	button:active, button:focus{
+    border: none;
+    outline:none;
+	}
+	
+	section{
+		width: 800px;
+		margin: 0 auto;
+	}
+	
+	ul{
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	
+	.slide_img{
+		width: 800px;
+		overflow: hidden;
+	}
+	.slide_img li{
+		width: 800px;
+		height: 450px;
+	}
+	
+	.slide_img li > div > *{
+		color: #fff;
+		/* padding-left:30px; */
+	}
+	
+	.slide_img li h2{
+		width: 800px;
+	}
+	.slide_img li:first-child {
+		background: url("img/01.png");
+	}
+	.slide_img li:nth-child(2) {
+		background: url("img/02.png");
+	}
+	.slide_img li:nth-child(3) {
+		background: url("img/03.png");
+	}
+	.slide_img li:nth-child(4) {
+		background: url("img/04.png");
+	}
+	.slide_img li:nth-child(5) {
+		background: url("img/05.png");
+	}
+	.slide_img li:nth-child(6) {
+		background: url("img/06.png");
+	}
+	
+	.slide_btn button{
+      background: url( "img/point_button.png" ) no-repeat;
+      border: none;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+	}
+	
+	.slide_btn {
+		width: 210px;
+		margin: -40px auto 0;
+	}
+	.slide_btn li{
+		margin: 0 10px;
+	}
+	.slide_btn button.on{
+		 background-position: 0px -30px;
+	}
+	
+	.slide_btn button.hov{
+		 background-position: 0px -15px;
+	}
+	
+	.slide_img>li>div{
+		position: relative;
+		width: 800px;
+		top:70px;
+		left:-100px;
+		opacity: 0;
+	}
+</style>
+
+<script type="text/javascript">
+ 	$(function() {
+		var i = parseInt(Math.random()*6);
+		//console.log(i);
+		$('.first').animate({marginLeft: -800*i + 'px'}, 1000);
+		var prev = $('button').eq(i).addClass('on');
+		var t;
+		$('div').eq(i).delay(1000).animate({opacity:'1', left:'70px'},1000);
+		
+		$('.slide_btn button').click(function() {
+			$('div').eq(i).css('opacity','0').css('left','0');
+			$(prev).removeClass('on');
+			$(this).addClass('on');
+			i = $('button').index(this);
+			console.log(i);
+			console.log($('div').eq(i));
+			$('.first').animate({marginLeft: -800*i + 'px'}, 1000);
+			$('div').eq(i).delay(1000).animate({opacity:'1', left:'70px'},1000);
+			prev = this;
+		}); 
+		
+		$('.slide_btn button').hover(function() {
+			$(this).addClass('hov');
+		}, function() {
+			$(this).removeClass('hov');
+		});
+	});
+</script>
+</head>
+<body>
+	<section>
+		<h1>이미지 슬라이드</h1>
+		<ul class="slide_img">
+			<li class="first">
+				<div>
+					<h2>첫번째 슬라이드</h2>
+					<h3>첫번째 간략한 설명</h3>
+					<p>첫번째 자세한 설명이 적힌 컬럼</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<h2>두번째 슬라이드</h2>
+					<h3>두번째 간략한 설명</h3>
+					<p>두번째 자세한 설명이 적힌 컬럼</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<h2>세번째 슬라이드</h2>
+					<h3>세번째 간략한 설명</h3>
+					<p>세번째 자세한 설명이 적힌 컬럼</p>
+				</div>
+			</li>			
+			<li>
+				<div>
+					<h2>네번째 슬라이드</h2>
+					<h3>네번째 간략한 설명</h3>
+					<p>네번째 자세한 설명이 적힌 컬럼</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<h2>다섯번째 슬라이드</h2>
+					<h3>다섯번째 간략한 설명</h3>
+					<p>다섯번째 자세한 설명이 적힌 컬럼</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<h2>여섯번째 슬라이드</h2>
+					<h3>여섯번째 간략한 설명</h3>
+					<p>여섯번째 자세한 설명이 적힌 컬럼</p>
+				</div>
+			</li>
+		</ul>
+		
+		<ul class="slide_btn">
+			<li><button></button></li>
+			<li><button></button></li>
+			<li><button></button></li>
+			<li><button></button></li>
+			<li><button></button></li>
+			<li><button></button></li>
+		</ul>
+	</section>
+</body>
+</html>

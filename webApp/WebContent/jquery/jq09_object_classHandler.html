@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+	.c0{
+		width: 200px;
+		height: 100px;
+	}
+	
+	.c1{
+		border: 2px solid red;
+	}
+	
+	.c2{
+		border: 2px solid green;
+	}
+	
+	.c3{
+		border: 2px dashed blue;
+	}
+	
+	.c4{
+		border: 2px double yellow;
+	}
+</style>
+<script type="text/javascript">
+	$(function() {
+		// jquery에서 스타일시트 클래스 조작하는 함수
+		// addClass() :  객체에 클래스를 추가
+		$('img').addClass('c0');
+		// 첫번째 이미지에 c1 클래스 추가
+		$('img:first').addClass('c1');
+		// 세번째 이미지에 c3 클래스 추가
+		$('img').eq(2).addClass('c3');
+		// 짝수번째 이미지에 c2 클래스 추가
+		$('img:odd').addClass('c2');
+		
+		// removeClass() : 객체에서 클래스를 지우기
+		$('img:first').removeClass('c1');
+		// toggleClass() : 객체에 클래스가 있으면 지우고 없으면 추가
+		$('img').toggleClass('c3');
+		
+		// hasClass() : 객체에 클래스가 있는지(true) 없는지(false) 확인
+		var result = $('img:last').hasClass('c1');
+		//$('#username').attr('value',result);
+		$('#username').val(result);
+	
+	})
+</script>
+</head>
+<body>
+	<input type="text" name="username" id="username">
+	<hr>
+	<div></div>
+	<img alt="" src="../img/01.png">
+	<img alt="" src="../img/02.png">
+	<img alt="" src="../img/03.png">
+	<img alt="" src="../img/04.png">
+</body>
+</html>

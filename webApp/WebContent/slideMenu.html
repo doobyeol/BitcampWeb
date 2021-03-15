@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		height:100vh;
+		margin:0;
+		background: url(img/noise.png);
+	}
+
+	.wrap{
+		width:1000px;
+		height:100%;
+		margin: 0 auto;
+		background: url(img/bg1.jpg) no-repeat;
+	} 
+	header{
+		padding-top: 42px;
+	}
+	ul{
+		display: flex;
+		width: 600px;
+		margin: 0 auto;
+		padding: 0;
+	}
+	
+	li{
+		width: 25%;
+		list-style: none;
+		text-align: center;
+	}
+	
+	a{
+		display:block;
+		position:relative;
+		line-height: 70px;
+		height: 70px;
+		color:#5f126d;
+		font-weight:bold;
+		text-decoration: none;
+	}
+	
+	span{
+		display:block;
+		position:absolute;
+		top:-150px;
+		width: 97px;
+		height: 149px;
+		margin-left:25px;
+		background: url(img/label.png);
+		transition: 0.5s;
+	}
+	
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	// 라벨이미지 태그 추가
+	var tag = '<span></span>';
+	$(function() {
+		$('a').before(tag);
+	})
+	
+	// 마우스 hover 이벤트
+ 	$(function() {
+		$('li').hover(function() {
+			$(this).children('span').css('top','0px');
+		}, function() {
+			$(this).children('span').css('top','-150px');
+		});
+	}) 
+</script>
+</head>
+<body>
+<div class="wrap">
+	<header>
+		<ul>
+			<li><a href="#">MENU</a></li>
+			<li><a href="#">ABOUT</a></li>
+			<li><a href="#">WORK</a></li>
+			<li><a href="#">CONTACT</a></li>
+		</ul>
+	</header>
+	<section></section>
+</div>
+</body>
+</html>

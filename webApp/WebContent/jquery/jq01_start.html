@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	jquery는 javascript 라이브러리이다.
+	http://wwww.jquery.com에서 다운로드
+	
+	html/css/javascript실행부 jquery실행
+	이벤트는 jquery실행후 실행됨.
+ -->
+<script src="lib/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	alert("자바스크립트");
+	
+	// jquery 코드
+	// 선택자 : document 
+	// 								이벤트 종류 : body 실행이 끝나면 jquery ready 이벤트 발생
+	$(document).ready(
+			function() {
+				// jquery 영역
+				//alert("jquery 실행부");
+				console.log('ready...');
+			}
+	);
+	
+</script>
+</head>
+<body onload="console.log('onload')">
+	<h1>html 문서..</h1>
+</body>
+</html>

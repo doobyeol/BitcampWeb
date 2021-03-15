@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		// html 태그 추가하기
+		// text, html -> innerHTML
+		var tag = '<img src="../img/05.png"> <div>글자</div>';
+		// document.getElementById("result").innerHTML = tag;
+		$('#result').html(tag);
+		console.log($('#result').html());
+		
+		// 태그 안에 문자 넣기
+		$('#result').text(tag);
+		console.log($('#daum1').text());
+		
+		// 속성 추가하기
+		// $('h2>a')
+		$('h2').children('a').attr('href','https://www.nate.com')
+		$('h2>a').attr('target','_blank')
+		
+		// 속성값 지우기
+		//$('h2').children('a').attr('href','');
+		// 속성 지우기
+		$('a').removeAttr('href');
+	})
+</script>
+</head>
+<body>
+	<h1 id="daum1">객체 조작1</h1>
+	<h2><a>객체 조작2</a></h2>
+	<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+	<h1>페이징하기</h1>
+	<!-- 
+		.pagination : 리스트 페이징하기 
+		.breadcrumb : 리스트 배경 설정
+		
+		.page-item : 이 클래스가 있어야 disabled를 줄 수 있음
+		.page-link : padding, border
+		.disabled : 링크 비활성화
+		.active : 현재페이지 활성화
+		.pagination-lg , .pagination-md, pagination-sm, pagination-xs : 글자크기, 패딩 사이즈
+	-->
+	
+	<ul class="pagination pagination-sm">
+		<li class="page-item disabled"><a href="#" class="page-link">Prev</a></li>
+		<li class="page-item"><a href="#" class="page-link">1</a></li>
+		<li class="page-item"><a href="#" class="page-link">2</a></li>
+		<li class="page-item active"><a href="#" class="page-link">3</a></li>
+		<li class="page-item"><a href="#" class="page-link">4</a></li>
+		<li class="page-item"><a href="#" class="page-link">5</a></li>
+		<li class="page-item disabled"><a href="#" class="page-link">Next</a></li>
+	</ul>
+	
+	<hr>
+	
+	<ul class="breadcrumb pagination-sm">
+		<li class="page-item disabled"><a href="#" class="page-link">Prev</a></li>
+		<li class="page-item"><a href="#" class="page-link">1</a></li>
+		<li class="page-item"><a href="#" class="page-link">2</a></li>
+		<li class="page-item active"><a href="#" class="page-link">3</a></li>
+		<li class="page-item"><a href="#" class="page-link">4</a></li>
+		<li class="page-item"><a href="#" class="page-link">5</a></li>
+		<li class="page-item disabled"><a href="#" class="page-link">Next</a></li>
+	</ul>
+</div>
+</body>
+</html>

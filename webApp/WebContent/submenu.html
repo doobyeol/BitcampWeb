@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+	body, ul, li, h1{
+		margin: 0; padding:0; list-style: none;
+		text-align: center;
+	}
+	
+	a, a:link, a:visited{
+		color: #000;
+		text-decoration: none;
+	}
+	
+	.wrap{
+		width: 800px;
+		margin: 0 auto;
+	}
+	
+	header{
+	}
+	
+	h1{
+		line-height: 160px;
+	}
+	.logo{
+		letter-spacing: 3px;
+		font-weight: 500;
+	}
+	 
+	.main_menu{
+		display: flex;
+		position:relative;
+		border-top: 3px solid #ccc;
+		border-bottom: 1px solid #ccc;
+	}
+	
+	.main_menu>li{
+		width: 160px;
+		line-height: 40px;
+	}
+	
+	.main_menu>li>a{
+		display:block;
+		color: #ccc;
+		font-size: 1em;
+		font-weight: bold;
+		transition:0.5s;
+	}
+	
+	.main_menu>li:hover>a{
+		color: #000;
+	}
+	
+	.sub_menu{
+		width:160px;
+		position:absolute;
+		top:40px;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		opacity:0;
+		transition:0.5s;
+	}
+	
+	.sub_menu>li>a{
+		display:block;
+		color: #ccc;
+		transition:0.5s;
+	}
+	
+	.sub_menu>li>a:hover{
+		color: #000;
+	}
+	
+	img{
+		width: 800px;
+	}	
+</style>
+<script type="text/javascript">
+	$(function() {
+		
+		var main = ['OUTER','TOP','DRESS','BOTTOM','SUMMER']
+		
+		$('.main_menu>li').hover(function() {
+			$(this).children('a').css('color','#000');
+			//$(this).children('.sub_menu').css('display','block');
+			//$(this).children('.sub_menu').css('z-index','1');
+			$(this).children('.sub_menu').css('opacity','1');
+		}, function() {
+			$(this).children('a').css('color','#ccc');
+			//$(this).children('.sub_menu').css('display','none');
+			//$(this).children('.sub_menu').css('z-index','-111111111111');
+			$(this).children('.sub_menu').css('opacity','0');
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<h1><a class="logo" href="#">GIRLSDAILY</a></h1>
+			<nav>
+				<ul class="main_menu">
+					<li>
+						<a href="#">OUTER</a>
+						<ul class="sub_menu">
+							<li><a href="#">가디건</a></li>
+							<li><a href="#">자켓 &amp; 점퍼</a></li>
+							<li><a href="#">베스트</a></li>
+							<li><a href="#">코트</a></li>
+							<li><a href="#">세일</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">TOP</a>
+						<ul class="sub_menu">
+							<li><a href="#">Tee</a></li>
+							<li><a href="#">Cami</a></li>
+							<li><a href="#">Knit</a></li>
+							<li><a href="#">Skirt &amp; Blouse</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">DRESS</a>
+						<ul class="sub_menu">
+							<li><a href="#">All</a></li>
+							<li><a href="#">바캉스룩</a></li>
+							<li><a href="#">SET</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">BOTTOM</a>
+						<ul class="sub_menu">
+							<li><a href="#">레깅스</a></li>
+							<li><a href="#">힐링투엘브</a></li>
+							<li><a href="#">히든밴딩시리즈</a></li>
+							<li><a href="#">스커트</a></li>
+							<li><a href="#">팬츠</a></li>
+						</ul>
+					</li>					
+					<li>
+						<a href="#">SUMMER</a>
+						<ul class="sub_menu">
+							<li><a href="#">HOLI스윔웨어</a></li>
+							<li><a href="#">at 22℃</a></li>
+							<li><a href="#">바캉스룩</a></li>
+						</ul>
+					</li>					
+				</ul>
+			</nav>
+		</header>
+		<img alt="" src="img/cal.jpg">
+	</div>
+</body>
+</html>

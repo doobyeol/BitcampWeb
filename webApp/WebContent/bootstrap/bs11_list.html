@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('.container > div').eq(0).children('a').addClass('list-group-item');
+		
+		$('.container > div').eq(1).addClass('list-group');
+		$('.container > div').eq(1).children('div').addClass('list-group-item');
+	})
+</script>
+</head>
+<body>
+	<div class="container">
+		<!-- ul태그로 목록 만들기 -->
+		<ul class="list-group">
+			<li class="list-group-item">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</li>
+			<li class="list-group-item list-group-item-secondary">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</li>
+			<li class="list-group-item">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</li>
+			<li class="list-group-item">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</li>
+		</ul>
+		<hr>
+		<!-- a태그로 목록 만들기 -->
+		<div class="list-group">
+			<a href="#" class="">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</a>
+			<a href="#" class=" list-group-item-secondary">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</a>
+			<a href="#" class="">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</a>
+			<a href="#" class="">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</a>
+			<a href="#" class="">
+				<h1>INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</h1>
+				<p>INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</p>
+			</a>
+		</div>
+		<hr>
+		<!-- div태그로 목록 만들기 -->
+		<div>
+			<div>INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</div>
+			<div>INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</div>
+			<div>INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</div>
+			<div>INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</div>
+			<div>INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</div>
+		</div>
+	</div>
+</body>
+</html>

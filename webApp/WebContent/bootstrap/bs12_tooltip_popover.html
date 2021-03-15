@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="lib/bootstrap.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// tooltip 기능이 적용되기 위해서는 tooltip() 함수를 호출하여야 한다.
+		
+		// 속성선택자
+		$('[data-toggle=tooltip]').tooltip();
+		
+		// popover 기능 적용시 popover() 함수 호출
+		$('[data-toggle=popover]').popover();
+	})
+</script>
+</head>
+<body>
+	<div class="container">
+		<!-- 
+			poper.min.js가 있어야한다.
+			
+			.tooltip : 풍선 도움말
+			
+			title : 마우스 오버시 표시할 풍선도움말 내용
+			data-placement : 툴팁이 표시되는 위치 (top, right, bottom, left)
+		 -->
+		 <div>
+		 	<img alt="" src="../img/06.png">
+		 </div>
+		 <h1 title="tooltip" data-toggle="tooltip" data-placement="right">풍선도움말 : tooltip 실행하기</h1>
+		 <div title="console" data-toggle="tooltip" data-placement="bottom">
+			 	INFO: 프로토콜 핸들러 ["http-nio-9090"]을(를) 시작합니다.
+				3월 15, 2021 9:40:50 오전 org.apache.catalina.startup.Catalina start
+				INFO: 서버가 [310] 밀리초 내에 시작되었습니다.
+		 </div>
+		 
+		 <!-- 
+		 	popover : 풍선도움말 (제목:content)
+		 	마우스 클릭시 
+		 	
+		 	title : 팝오버의 제목
+		 	data-content : 팝오버의 내용
+		 	data-placement : 툴팁이 표시되는 위치 (top, right, bottom, left)
+		 	data-toggle : popover
+		 	data-trigger ="hover" : 마우스 오버시 팝오버 보이기
+		  -->
+		 <div class="list-group">
+			 	<a href="#" class="list-group-item" title="console1" data-content="console log1" data-toggle="popover" data-placement="bottom" data-trigger="hover">INFO: 프로토콜 핸들러 ["http-nio-9090"]을(를) 시작합니다.</a>
+				<a href="#" class="list-group-item" title="console2" data-content="console log2" data-toggle="popover" data-placement="bottom" data-trigger="hover">3월 15, 2021 9:40:50 오전 org.apache.catalina.startup.Catalina start</a>
+				<a href="#" class="list-group-item" title="console3" data-content="console log3" data-toggle="popover" data-placement="bottom">INFO: 서버가 [310] 밀리초 내에 시작되었습니다.</a>
+		 </div>
+	</div>
+</body>
+</html>

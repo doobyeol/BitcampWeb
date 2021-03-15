@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+<!-- 
+	getbootstrap.com
+	
+	불러오는 순서
+	1. viewport 설정 // 반응형 기반이기 때문에
+	2. bootstrap 스타일 시트
+	3. jquery 스크립트
+	4. bootstrap 스크립트
+ -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="lib/bootstrap.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<style type="text/css">
+	
+	/* bootstrap의 container 클래스 재셋팅*/
+	.container{
+		background-color: #ccc;
+	}
+	
+	.container-fluid{
+		background-color: lightblue;
+	}
+</style>
+</head>
+<body>
+<!-- 부트스트랩 지정 클래스명
+	.container : 반응형 폭 설정 클래스
+	.container-fluid : 폭을 100%;
+ -->
+ 	<div class="container">
+		<img src="../img/09.png" width="100%">
+	</div>
+ 
+	<div class="container-fluid">
+		<img src="../img/10.png" width="100%">
+	</div>
+</body>
+</html>

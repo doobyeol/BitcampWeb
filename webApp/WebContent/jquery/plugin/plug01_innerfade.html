@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 
+	https://gist.github.com/coolniikou/665255
+ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="jquery.innerfade.js"></script>
+<style type="text/css">
+	ul,li{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	#innerImg{
+		width: 500px;
+		height: 300px;
+	}
+	
+	#innerImg img{
+		width: 500px;
+	}
+	
+	#txt>li{
+		height: 300px;
+		border: 2px solid green;
+	}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$('#inner').innerfade({ // 옵션을 제이슨 형식으로 준다.
+			// 어떤식으로 화면이 전환될 것인지 slide, fade(기본) 
+			animationtype: 'slide',
+			// 화면전환 속도
+			speed : 1000, // 'slow','fast','normal', 밀리초
+			timeout : 1000, // 쇼 대기시간
+			type : 'random',// 'random','sequence'(기본), random_start
+			containerheight:'auto' //
+		});
+		
+		$('#txt').innerfade({
+			speed:3000,
+			timeout:2000,
+			type:'random_start'
+		});
+	})	
+
+</script>
+</head>
+<body>
+<div id="innerImg">
+	<ul id="inner">
+		<li><a href="https://www.nate.com"><img src="../../img/12.png"></a></li>
+		<li><a href="https://www.naver.com"><img src="../../img/11.png"></a></li>
+		<li><a href="https://www.daum.net"><img src="../../img/10.png"></a></li>
+		<li><a href="#"><img src="../../img/09.png"></a></li>
+		<li><a href="#"><img src="../../img/08.png"></a></li>
+		<li><a href="#"><img src="../../img/07.png"></a></li>
+	</ul>
+</div>
+<div id="innerText">
+	<ul id="txt">
+		<li>INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+		</li>
+		<li>INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+				INFO: 명령 행 아규먼트:  -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.0
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+		</li>
+		<li>INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+				INFO: 명령 행 아규먼트:  -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.0
+				INFO: 명령 행 아규먼트:  -Dwtp.deploy=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+		</li>
+		<li>INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+				INFO: 명령 행 아규먼트:  -Dcatalina.home=C:\Program Files\Apache Software Foundation\Tomcat 10.0
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+				INFO: 명령 행 아규먼트:  -Dwtp.deploy=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps
+		</li>
+		<li>INFO: 명령 행 아규먼트:  -Dcatalina.base=D:\workspaceWeb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0
+				3월 11, 2021 9:42:25 오전 org.apache.catalina.startup.VersionLoggerListener log
+		</li>
+	</ul>
+</div>
+</body>
+</html>
